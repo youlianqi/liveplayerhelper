@@ -1,0 +1,942 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		471D91082C100E3F00FE7494 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91072C100E3F00FE7494 /* AppDelegate.m */; };
+		471D91132C100E4000FE7494 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471D91122C100E4000FE7494 /* Assets.xcassets */; };
+		471D91162C100E4000FE7494 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 471D91152C100E4000FE7494 /* Base */; };
+		471D91192C100E4000FE7494 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91182C100E4000FE7494 /* main.m */; };
+		471D91232C100E4000FE7494 /* NELivePlayerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91222C100E4000FE7494 /* NELivePlayerDemoTests.m */; };
+		471D912D2C100E4000FE7494 /* NELivePlayerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D912C2C100E4000FE7494 /* NELivePlayerDemoUITests.m */; };
+		471D912F2C100E4000FE7494 /* NELivePlayerDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D912E2C100E4000FE7494 /* NELivePlayerDemoUITestsLaunchTests.m */; };
+		471D91502C10119900FE7494 /* NELivePlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91412C10119900FE7494 /* NELivePlayerManager.m */; };
+		471D91512C10119900FE7494 /* GKVideoScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91442C10119900FE7494 /* GKVideoScrollView.m */; };
+		471D91522C10119900FE7494 /* GKVideoViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91462C10119900FE7494 /* GKVideoViewCell.m */; };
+		471D91532C10119900FE7494 /* NELivePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D91492C10119900FE7494 /* NELivePlayerViewController.m */; };
+		471D91542C10119900FE7494 /* NELiveVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D914B2C10119900FE7494 /* NELiveVideoCell.m */; };
+		471D91552C10119900FE7494 /* NELiveVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D914D2C10119900FE7494 /* NELiveVideoManager.m */; };
+		4721C33F2C1BE9F9008BF743 /* NELivePlayerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4721C33E2C1BE9F9008BF743 /* NELivePlayerLogManager.m */; };
+		47597A282C19AEA0003177B0 /* NTESDemoLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47597A252C19AEA0003177B0 /* NTESDemoLogFileManager.m */; };
+		477DDCAE2C119EA200175AF9 /* NELivePlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477DDCAD2C119EA200175AF9 /* NELivePlayerListViewController.m */; };
+		47D49D9E2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */; };
+		47D49D9F2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		47E2670701FBF95E107A6A5A /* Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0186232A5FB60C44CD3B689B /* Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework */; };
+		47F606B22C114FB100C1B83D /* NELivePlayerControlView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606AA2C114FB100C1B83D /* NELivePlayerControlView.m */; };
+		47F606B32C114FB100C1B83D /* NELivePlayerLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606AC2C114FB100C1B83D /* NELivePlayerLoginViewController.m */; };
+		47F606B42C114FB100C1B83D /* NELivePlayerQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606AE2C114FB100C1B83D /* NELivePlayerQRScanViewController.m */; };
+		47F606B52C114FB100C1B83D /* NELivePlayerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606B02C114FB100C1B83D /* NELivePlayerVC.m */; };
+		47F606B82C11501400C1B83D /* UIView+NEPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606B62C11501400C1B83D /* UIView+NEPlayer.m */; };
+		47F606C22C11527700C1B83D /* NELPDemoPlayerModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606BA2C11527700C1B83D /* NELPDemoPlayerModel.m */; };
+		47F606C32C11527700C1B83D /* NELPDemoScrollVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606BC2C11527700C1B83D /* NELPDemoScrollVC.m */; };
+		47F606C42C11527700C1B83D /* NELPDisplayScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606BE2C11527700C1B83D /* NELPDisplayScrollView.m */; };
+		47F606C52C11527700C1B83D /* NELPDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 47F606C02C11527700C1B83D /* NELPDisplayView.m */; };
+		50F6789A7801E58CDA7B68E7 /* Pods_NELivePlayerDemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A3E3B4715BF1356727C2236 /* Pods_NELivePlayerDemoTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		471D911F2C100E4000FE7494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 471D90FB2C100E3F00FE7494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 471D91022C100E3F00FE7494;
+			remoteInfo = NELivePlayerDemo;
+		};
+		471D91292C100E4000FE7494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 471D90FB2C100E3F00FE7494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 471D91022C100E3F00FE7494;
+			remoteInfo = NELivePlayerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		47D49D9D2C19FC0A0057648D /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				47D49D9F2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0186232A5FB60C44CD3B689B /* Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A3E3B4715BF1356727C2236 /* Pods_NELivePlayerDemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NELivePlayerDemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		471D91032C100E3F00FE7494 /* NELivePlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NELivePlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		471D91062C100E3F00FE7494 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		471D91072C100E3F00FE7494 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		471D91122C100E4000FE7494 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		471D91152C100E4000FE7494 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		471D91172C100E4000FE7494 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		471D91182C100E4000FE7494 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		471D911E2C100E4000FE7494 /* NELivePlayerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NELivePlayerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		471D91222C100E4000FE7494 /* NELivePlayerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerDemoTests.m; sourceTree = "<group>"; };
+		471D91282C100E4000FE7494 /* NELivePlayerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NELivePlayerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		471D912C2C100E4000FE7494 /* NELivePlayerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerDemoUITests.m; sourceTree = "<group>"; };
+		471D912E2C100E4000FE7494 /* NELivePlayerDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		471D91402C10119900FE7494 /* NELivePlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerManager.h; sourceTree = "<group>"; };
+		471D91412C10119900FE7494 /* NELivePlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerManager.m; sourceTree = "<group>"; };
+		471D91432C10119900FE7494 /* GKVideoScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKVideoScrollView.h; sourceTree = "<group>"; };
+		471D91442C10119900FE7494 /* GKVideoScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKVideoScrollView.m; sourceTree = "<group>"; };
+		471D91452C10119900FE7494 /* GKVideoViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GKVideoViewCell.h; sourceTree = "<group>"; };
+		471D91462C10119900FE7494 /* GKVideoViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GKVideoViewCell.m; sourceTree = "<group>"; };
+		471D91482C10119900FE7494 /* NELivePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerViewController.h; sourceTree = "<group>"; };
+		471D91492C10119900FE7494 /* NELivePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerViewController.m; sourceTree = "<group>"; };
+		471D914A2C10119900FE7494 /* NELiveVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELiveVideoCell.h; sourceTree = "<group>"; };
+		471D914B2C10119900FE7494 /* NELiveVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELiveVideoCell.m; sourceTree = "<group>"; };
+		471D914C2C10119900FE7494 /* NELiveVideoManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELiveVideoManager.h; sourceTree = "<group>"; };
+		471D914D2C10119900FE7494 /* NELiveVideoManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELiveVideoManager.m; sourceTree = "<group>"; };
+		4721C33B2C1BDF1A008BF743 /* NELivePlayerDemo.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELivePlayerDemo.pch; sourceTree = "<group>"; };
+		4721C33D2C1BE9F9008BF743 /* NELivePlayerLogManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELivePlayerLogManager.h; sourceTree = "<group>"; };
+		4721C33E2C1BE9F9008BF743 /* NELivePlayerLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerLogManager.m; sourceTree = "<group>"; };
+		47597A242C19AEA0003177B0 /* NTESDemoLogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDemoLogFileManager.h; sourceTree = "<group>"; };
+		47597A252C19AEA0003177B0 /* NTESDemoLogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDemoLogFileManager.m; sourceTree = "<group>"; };
+		477DDCAC2C119EA200175AF9 /* NELivePlayerListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELivePlayerListViewController.h; sourceTree = "<group>"; };
+		477DDCAD2C119EA200175AF9 /* NELivePlayerListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerListViewController.m; sourceTree = "<group>"; };
+		47D49DA02C19FC670057648D /* NELPGslb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NELPGslb.framework; path = ../../../LivePlayer_iOS_Demo_v3.2.7/NELivePlayer/NELPGslb.framework; sourceTree = "<group>"; };
+		47D49DA22C19FC6A0057648D /* NERtd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NERtd.framework; path = ../../../LivePlayer_iOS_Demo_v3.2.7/NELivePlayer/NERtd.framework; sourceTree = "<group>"; };
+		47D49DA42C19FC6C0057648D /* NMCBasicModuleFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NMCBasicModuleFramework.framework; path = ../../../LivePlayer_iOS_Demo_v3.2.7/NELivePlayer/NMCBasicModuleFramework.framework; sourceTree = "<group>"; };
+		47F606A92C114FB100C1B83D /* NELivePlayerControlView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerControlView.h; sourceTree = "<group>"; };
+		47F606AA2C114FB100C1B83D /* NELivePlayerControlView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerControlView.m; sourceTree = "<group>"; };
+		47F606AB2C114FB100C1B83D /* NELivePlayerLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerLoginViewController.h; sourceTree = "<group>"; };
+		47F606AC2C114FB100C1B83D /* NELivePlayerLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerLoginViewController.m; sourceTree = "<group>"; };
+		47F606AD2C114FB100C1B83D /* NELivePlayerQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerQRScanViewController.h; sourceTree = "<group>"; };
+		47F606AE2C114FB100C1B83D /* NELivePlayerQRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerQRScanViewController.m; sourceTree = "<group>"; };
+		47F606AF2C114FB100C1B83D /* NELivePlayerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerVC.h; sourceTree = "<group>"; };
+		47F606B02C114FB100C1B83D /* NELivePlayerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerVC.m; sourceTree = "<group>"; };
+		47F606B62C11501400C1B83D /* UIView+NEPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NEPlayer.m"; sourceTree = "<group>"; };
+		47F606B72C11501400C1B83D /* UIView+NEPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NEPlayer.h"; sourceTree = "<group>"; };
+		47F606B92C11527700C1B83D /* NELPDemoPlayerModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELPDemoPlayerModel.h; sourceTree = "<group>"; };
+		47F606BA2C11527700C1B83D /* NELPDemoPlayerModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELPDemoPlayerModel.m; sourceTree = "<group>"; };
+		47F606BB2C11527700C1B83D /* NELPDemoScrollVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELPDemoScrollVC.h; sourceTree = "<group>"; };
+		47F606BC2C11527700C1B83D /* NELPDemoScrollVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELPDemoScrollVC.m; sourceTree = "<group>"; };
+		47F606BD2C11527700C1B83D /* NELPDisplayScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELPDisplayScrollView.h; sourceTree = "<group>"; };
+		47F606BE2C11527700C1B83D /* NELPDisplayScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELPDisplayScrollView.m; sourceTree = "<group>"; };
+		47F606BF2C11527700C1B83D /* NELPDisplayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELPDisplayView.h; sourceTree = "<group>"; };
+		47F606C02C11527700C1B83D /* NELPDisplayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NELPDisplayView.m; sourceTree = "<group>"; };
+		51B76E5C1273A7DDA24E1E8C /* Pods-NELivePlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemo.release.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemo/Pods-NELivePlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		55140774625B0BDFCFEF89A1 /* Pods-NELivePlayerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemoTests.debug.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemoTests/Pods-NELivePlayerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		84787C69FBC7A428554F2405 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemo-NELivePlayerDemoUITests.release.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemo-NELivePlayerDemoUITests/Pods-NELivePlayerDemo-NELivePlayerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AF03D7B9D1363450E991CD68 /* Pods-NELivePlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemo.debug.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemo/Pods-NELivePlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		B0ABCC9AA24D8A686D570C30 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemo-NELivePlayerDemoUITests.debug.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemo-NELivePlayerDemoUITests/Pods-NELivePlayerDemo-NELivePlayerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBA43632A6CE104F2C014D9C /* Pods-NELivePlayerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NELivePlayerDemoTests.release.xcconfig"; path = "Target Support Files/Pods-NELivePlayerDemoTests/Pods-NELivePlayerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NELivePlayerDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		471D91002C100E3F00FE7494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47D49D9E2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D911B2C100E4000FE7494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F6789A7801E58CDA7B68E7 /* Pods_NELivePlayerDemoTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D91252C100E4000FE7494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47E2670701FBF95E107A6A5A /* Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		471D90FA2C100E3F00FE7494 = {
+			isa = PBXGroup;
+			children = (
+				471D91052C100E3F00FE7494 /* NELivePlayerDemo */,
+				471D91212C100E4000FE7494 /* NELivePlayerDemoTests */,
+				471D912B2C100E4000FE7494 /* NELivePlayerDemoUITests */,
+				471D91042C100E3F00FE7494 /* Products */,
+				CC0FD7390B4553B12C7FB40D /* Pods */,
+				7CDD5FB44B8781768A35548D /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		471D91042C100E3F00FE7494 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				471D91032C100E3F00FE7494 /* NELivePlayerDemo.app */,
+				471D911E2C100E4000FE7494 /* NELivePlayerDemoTests.xctest */,
+				471D91282C100E4000FE7494 /* NELivePlayerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		471D91052C100E3F00FE7494 /* NELivePlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				47597A262C19AEA0003177B0 /* log */,
+				47F606C12C11527700C1B83D /* ScrollVC */,
+				47F606B12C114FB100C1B83D /* Root */,
+				471D913D2C10101900FE7494 /* QuickPlayerDemo */,
+				471D91062C100E3F00FE7494 /* AppDelegate.h */,
+				471D91072C100E3F00FE7494 /* AppDelegate.m */,
+				4721C33B2C1BDF1A008BF743 /* NELivePlayerDemo.pch */,
+				471D91122C100E4000FE7494 /* Assets.xcassets */,
+				471D91142C100E4000FE7494 /* LaunchScreen.storyboard */,
+				471D91172C100E4000FE7494 /* Info.plist */,
+				471D91182C100E4000FE7494 /* main.m */,
+			);
+			path = NELivePlayerDemo;
+			sourceTree = "<group>";
+		};
+		471D91212C100E4000FE7494 /* NELivePlayerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				471D91222C100E4000FE7494 /* NELivePlayerDemoTests.m */,
+			);
+			path = NELivePlayerDemoTests;
+			sourceTree = "<group>";
+		};
+		471D912B2C100E4000FE7494 /* NELivePlayerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				471D912C2C100E4000FE7494 /* NELivePlayerDemoUITests.m */,
+				471D912E2C100E4000FE7494 /* NELivePlayerDemoUITestsLaunchTests.m */,
+			);
+			path = NELivePlayerDemoUITests;
+			sourceTree = "<group>";
+		};
+		471D913D2C10101900FE7494 /* QuickPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				471D914E2C10119900FE7494 /* demo */,
+				471D91422C10119900FE7494 /* PlayerManager */,
+			);
+			path = QuickPlayerDemo;
+			sourceTree = "<group>";
+		};
+		471D91422C10119900FE7494 /* PlayerManager */ = {
+			isa = PBXGroup;
+			children = (
+				471D91402C10119900FE7494 /* NELivePlayerManager.h */,
+				471D91412C10119900FE7494 /* NELivePlayerManager.m */,
+				4721C33D2C1BE9F9008BF743 /* NELivePlayerLogManager.h */,
+				4721C33E2C1BE9F9008BF743 /* NELivePlayerLogManager.m */,
+			);
+			path = PlayerManager;
+			sourceTree = "<group>";
+		};
+		471D91472C10119900FE7494 /* GKVideoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				471D91432C10119900FE7494 /* GKVideoScrollView.h */,
+				471D91442C10119900FE7494 /* GKVideoScrollView.m */,
+				471D91452C10119900FE7494 /* GKVideoViewCell.h */,
+				471D91462C10119900FE7494 /* GKVideoViewCell.m */,
+			);
+			path = GKVideoScrollView;
+			sourceTree = "<group>";
+		};
+		471D914E2C10119900FE7494 /* demo */ = {
+			isa = PBXGroup;
+			children = (
+				471D91472C10119900FE7494 /* GKVideoScrollView */,
+				477DDCAC2C119EA200175AF9 /* NELivePlayerListViewController.h */,
+				477DDCAD2C119EA200175AF9 /* NELivePlayerListViewController.m */,
+				471D91482C10119900FE7494 /* NELivePlayerViewController.h */,
+				471D91492C10119900FE7494 /* NELivePlayerViewController.m */,
+				471D914A2C10119900FE7494 /* NELiveVideoCell.h */,
+				471D914B2C10119900FE7494 /* NELiveVideoCell.m */,
+				471D914C2C10119900FE7494 /* NELiveVideoManager.h */,
+				471D914D2C10119900FE7494 /* NELiveVideoManager.m */,
+			);
+			path = demo;
+			sourceTree = "<group>";
+		};
+		47597A262C19AEA0003177B0 /* log */ = {
+			isa = PBXGroup;
+			children = (
+				47597A242C19AEA0003177B0 /* NTESDemoLogFileManager.h */,
+				47597A252C19AEA0003177B0 /* NTESDemoLogFileManager.m */,
+			);
+			path = log;
+			sourceTree = "<group>";
+		};
+		47F606B12C114FB100C1B83D /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				47F606A92C114FB100C1B83D /* NELivePlayerControlView.h */,
+				47F606AA2C114FB100C1B83D /* NELivePlayerControlView.m */,
+				47F606AB2C114FB100C1B83D /* NELivePlayerLoginViewController.h */,
+				47F606AC2C114FB100C1B83D /* NELivePlayerLoginViewController.m */,
+				47F606AD2C114FB100C1B83D /* NELivePlayerQRScanViewController.h */,
+				47F606AE2C114FB100C1B83D /* NELivePlayerQRScanViewController.m */,
+				47F606AF2C114FB100C1B83D /* NELivePlayerVC.h */,
+				47F606B02C114FB100C1B83D /* NELivePlayerVC.m */,
+				47F606B72C11501400C1B83D /* UIView+NEPlayer.h */,
+				47F606B62C11501400C1B83D /* UIView+NEPlayer.m */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		47F606C12C11527700C1B83D /* ScrollVC */ = {
+			isa = PBXGroup;
+			children = (
+				47F606B92C11527700C1B83D /* NELPDemoPlayerModel.h */,
+				47F606BA2C11527700C1B83D /* NELPDemoPlayerModel.m */,
+				47F606BB2C11527700C1B83D /* NELPDemoScrollVC.h */,
+				47F606BC2C11527700C1B83D /* NELPDemoScrollVC.m */,
+				47F606BD2C11527700C1B83D /* NELPDisplayScrollView.h */,
+				47F606BE2C11527700C1B83D /* NELPDisplayScrollView.m */,
+				47F606BF2C11527700C1B83D /* NELPDisplayView.h */,
+				47F606C02C11527700C1B83D /* NELPDisplayView.m */,
+			);
+			path = ScrollVC;
+			sourceTree = "<group>";
+		};
+		7CDD5FB44B8781768A35548D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				47D49DA42C19FC6C0057648D /* NMCBasicModuleFramework.framework */,
+				47D49DA22C19FC6A0057648D /* NERtd.framework */,
+				47D49DA02C19FC670057648D /* NELPGslb.framework */,
+				E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */,
+				0186232A5FB60C44CD3B689B /* Pods_NELivePlayerDemo_NELivePlayerDemoUITests.framework */,
+				2A3E3B4715BF1356727C2236 /* Pods_NELivePlayerDemoTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC0FD7390B4553B12C7FB40D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AF03D7B9D1363450E991CD68 /* Pods-NELivePlayerDemo.debug.xcconfig */,
+				51B76E5C1273A7DDA24E1E8C /* Pods-NELivePlayerDemo.release.xcconfig */,
+				B0ABCC9AA24D8A686D570C30 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.debug.xcconfig */,
+				84787C69FBC7A428554F2405 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.release.xcconfig */,
+				55140774625B0BDFCFEF89A1 /* Pods-NELivePlayerDemoTests.debug.xcconfig */,
+				CBA43632A6CE104F2C014D9C /* Pods-NELivePlayerDemoTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		471D91022C100E3F00FE7494 /* NELivePlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 471D91322C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemo" */;
+			buildPhases = (
+				C5D89493E47C2A006C88475E /* [CP] Check Pods Manifest.lock */,
+				471D90FF2C100E3F00FE7494 /* Sources */,
+				471D91002C100E3F00FE7494 /* Frameworks */,
+				471D91012C100E3F00FE7494 /* Resources */,
+				CB6755BE45F3CB8B1A25A13A /* [CP] Embed Pods Frameworks */,
+				47D49D9D2C19FC0A0057648D /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NELivePlayerDemo;
+			productName = NELivePlayerDemo;
+			productReference = 471D91032C100E3F00FE7494 /* NELivePlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		471D911D2C100E4000FE7494 /* NELivePlayerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 471D91352C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemoTests" */;
+			buildPhases = (
+				0A51A649292D35101FB288D7 /* [CP] Check Pods Manifest.lock */,
+				471D911A2C100E4000FE7494 /* Sources */,
+				471D911B2C100E4000FE7494 /* Frameworks */,
+				471D911C2C100E4000FE7494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				471D91202C100E4000FE7494 /* PBXTargetDependency */,
+			);
+			name = NELivePlayerDemoTests;
+			productName = NELivePlayerDemoTests;
+			productReference = 471D911E2C100E4000FE7494 /* NELivePlayerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		471D91272C100E4000FE7494 /* NELivePlayerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 471D91382C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemoUITests" */;
+			buildPhases = (
+				AD52F5ED708E8C2466008CCA /* [CP] Check Pods Manifest.lock */,
+				471D91242C100E4000FE7494 /* Sources */,
+				471D91252C100E4000FE7494 /* Frameworks */,
+				471D91262C100E4000FE7494 /* Resources */,
+				1ACA3D2A9FE2E23C230C111D /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				471D912A2C100E4000FE7494 /* PBXTargetDependency */,
+			);
+			name = NELivePlayerDemoUITests;
+			productName = NELivePlayerDemoUITests;
+			productReference = 471D91282C100E4000FE7494 /* NELivePlayerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		471D90FB2C100E3F00FE7494 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1530;
+				TargetAttributes = {
+					471D91022C100E3F00FE7494 = {
+						CreatedOnToolsVersion = 15.3;
+					};
+					471D911D2C100E4000FE7494 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 471D91022C100E3F00FE7494;
+					};
+					471D91272C100E4000FE7494 = {
+						CreatedOnToolsVersion = 15.3;
+						TestTargetID = 471D91022C100E3F00FE7494;
+					};
+				};
+			};
+			buildConfigurationList = 471D90FE2C100E3F00FE7494 /* Build configuration list for PBXProject "NELivePlayerDemo" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 471D90FA2C100E3F00FE7494;
+			productRefGroup = 471D91042C100E3F00FE7494 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				471D91022C100E3F00FE7494 /* NELivePlayerDemo */,
+				471D911D2C100E4000FE7494 /* NELivePlayerDemoTests */,
+				471D91272C100E4000FE7494 /* NELivePlayerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		471D91012C100E3F00FE7494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				471D91132C100E4000FE7494 /* Assets.xcassets in Resources */,
+				471D91162C100E4000FE7494 /* Base in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D911C2C100E4000FE7494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D91262C100E4000FE7494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A51A649292D35101FB288D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NELivePlayerDemoTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1ACA3D2A9FE2E23C230C111D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo-NELivePlayerDemoUITests/Pods-NELivePlayerDemo-NELivePlayerDemoUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo-NELivePlayerDemoUITests/Pods-NELivePlayerDemo-NELivePlayerDemoUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo-NELivePlayerDemoUITests/Pods-NELivePlayerDemo-NELivePlayerDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD52F5ED708E8C2466008CCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NELivePlayerDemo-NELivePlayerDemoUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5D89493E47C2A006C88475E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NELivePlayerDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB6755BE45F3CB8B1A25A13A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo/Pods-NELivePlayerDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo/Pods-NELivePlayerDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-NELivePlayerDemo/Pods-NELivePlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		471D90FF2C100E3F00FE7494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				477DDCAE2C119EA200175AF9 /* NELivePlayerListViewController.m in Sources */,
+				47F606B82C11501400C1B83D /* UIView+NEPlayer.m in Sources */,
+				471D91522C10119900FE7494 /* GKVideoViewCell.m in Sources */,
+				47F606C52C11527700C1B83D /* NELPDisplayView.m in Sources */,
+				4721C33F2C1BE9F9008BF743 /* NELivePlayerLogManager.m in Sources */,
+				471D91502C10119900FE7494 /* NELivePlayerManager.m in Sources */,
+				47F606C42C11527700C1B83D /* NELPDisplayScrollView.m in Sources */,
+				47F606B32C114FB100C1B83D /* NELivePlayerLoginViewController.m in Sources */,
+				47F606B22C114FB100C1B83D /* NELivePlayerControlView.m in Sources */,
+				47F606B42C114FB100C1B83D /* NELivePlayerQRScanViewController.m in Sources */,
+				471D91552C10119900FE7494 /* NELiveVideoManager.m in Sources */,
+				471D91542C10119900FE7494 /* NELiveVideoCell.m in Sources */,
+				47597A282C19AEA0003177B0 /* NTESDemoLogFileManager.m in Sources */,
+				47F606C32C11527700C1B83D /* NELPDemoScrollVC.m in Sources */,
+				47F606C22C11527700C1B83D /* NELPDemoPlayerModel.m in Sources */,
+				471D91082C100E3F00FE7494 /* AppDelegate.m in Sources */,
+				471D91532C10119900FE7494 /* NELivePlayerViewController.m in Sources */,
+				471D91512C10119900FE7494 /* GKVideoScrollView.m in Sources */,
+				47F606B52C114FB100C1B83D /* NELivePlayerVC.m in Sources */,
+				471D91192C100E4000FE7494 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D911A2C100E4000FE7494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				471D91232C100E4000FE7494 /* NELivePlayerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		471D91242C100E4000FE7494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				471D912D2C100E4000FE7494 /* NELivePlayerDemoUITests.m in Sources */,
+				471D912F2C100E4000FE7494 /* NELivePlayerDemoUITestsLaunchTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		471D91202C100E4000FE7494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 471D91022C100E3F00FE7494 /* NELivePlayerDemo */;
+			targetProxy = 471D911F2C100E4000FE7494 /* PBXContainerItemProxy */;
+		};
+		471D912A2C100E4000FE7494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 471D91022C100E3F00FE7494 /* NELivePlayerDemo */;
+			targetProxy = 471D91292C100E4000FE7494 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		471D91142C100E4000FE7494 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				471D91152C100E4000FE7494 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		471D91302C100E4000FE7494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		471D91312C100E4000FE7494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		471D91332C100E4000FE7494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AF03D7B9D1363450E991CD68 /* Pods-NELivePlayerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = GJ8NYK9W5X;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = ./NELivePlayerDemo/NELivePlayerDemo.pch;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NELivePlayerDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "视频云播放";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP需要访问您的相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "APP需要访问您的相册";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youlianqi.NELivePlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		471D91342C100E4000FE7494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51B76E5C1273A7DDA24E1E8C /* Pods-NELivePlayerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 8;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 569GNZ5392;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_PREFIX_HEADER = ./NELivePlayerDemo/NELivePlayerDemo.pch;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = NELivePlayerDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "视频云播放";
+				INFOPLIST_KEY_NSCameraUsageDescription = "";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "APP需要访问您的相册";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "APP需要访问您的相册";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.netease.nmc.NRTC.demoG2;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = G2DemoInhouse;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		471D91362C100E4000FE7494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55140774625B0BDFCFEF89A1 /* Pods-NELivePlayerDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GJ8NYK9W5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youlianqi.NELivePlayerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NELivePlayerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NELivePlayerDemo";
+			};
+			name = Debug;
+		};
+		471D91372C100E4000FE7494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBA43632A6CE104F2C014D9C /* Pods-NELivePlayerDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GJ8NYK9W5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youlianqi.NELivePlayerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NELivePlayerDemo.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/NELivePlayerDemo";
+			};
+			name = Release;
+		};
+		471D91392C100E4000FE7494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0ABCC9AA24D8A686D570C30 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GJ8NYK9W5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youlianqi.NELivePlayerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NELivePlayerDemo;
+			};
+			name = Debug;
+		};
+		471D913A2C100E4000FE7494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84787C69FBC7A428554F2405 /* Pods-NELivePlayerDemo-NELivePlayerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = GJ8NYK9W5X;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.youlianqi.NELivePlayerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = NELivePlayerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		471D90FE2C100E3F00FE7494 /* Build configuration list for PBXProject "NELivePlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471D91302C100E4000FE7494 /* Debug */,
+				471D91312C100E4000FE7494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		471D91322C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471D91332C100E4000FE7494 /* Debug */,
+				471D91342C100E4000FE7494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		471D91352C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471D91362C100E4000FE7494 /* Debug */,
+				471D91372C100E4000FE7494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		471D91382C100E4000FE7494 /* Build configuration list for PBXNativeTarget "NELivePlayerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471D91392C100E4000FE7494 /* Debug */,
+				471D913A2C100E4000FE7494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 471D90FB2C100E3F00FE7494 /* Project object */;
+}
