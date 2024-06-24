@@ -157,29 +157,81 @@
 }
 
 - (void)requestMoreData {
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    [self doAddDataSource];
     [self.manager.portraitScrollView.mj_header endRefreshing];
     [self.manager.portraitScrollView.mj_footer endRefreshing];
     [self.manager.portraitScrollView reloadData];
 }
 
 - (void)onNotifyLiveVideoManagerRequestMore:(NSNotification *)notification {
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    [self doAddDataSource];
     [self.manager.portraitScrollView reloadData];
+}
+
+- (NSUInteger)findIndexOfLastDataSource {
+    NSString *lastUrl = self.manager.dataSource.lastObject;
+    if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_1]) {
+        return 1;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_2]) {
+        return 2;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_3]) {
+        return 3;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_4]) {
+        return 4;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_5]) {
+        return 5;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_6]) {
+        return 6;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_7]) {
+        return 7;
+    }
+    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_8]) {
+        return 8;
+    }
+    
+    return 1;
+}
+
+- (void)addPlayUrlWithIndex:(NSUInteger)index {
+    if (index == 1) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
+    }
+    else if (index == 2) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
+    }
+    else if (index == 3) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
+    }
+    else if (index == 4) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
+    }
+    else if (index == 5) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
+    }
+    else if (index == 6) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
+    }
+    else if (index == 7) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
+    }
+    else if (index == 8) {
+        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    }
+}
+
+- (void)doAddDataSource {
+    NSUInteger lastIndex = [self findIndexOfLastDataSource];
+    for (NSUInteger i = 0; i < 8; ++i) {
+        lastIndex++;
+        lastIndex = lastIndex > 8 ? 1 : lastIndex;
+        [self addPlayUrlWithIndex:lastIndex];
+    }
 }
 
 - (void)requestData {

@@ -38,5 +38,7 @@
         <string>audio</string>
         <string>voip</string>
     </array>
+    <key>UIFileSharingEnabled</key>
+    <true/>
 </dict>
 </plist>

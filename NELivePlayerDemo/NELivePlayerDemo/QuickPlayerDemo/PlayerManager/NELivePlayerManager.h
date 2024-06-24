@@ -52,7 +52,7 @@ extern NSString *const NELivePlayerPlayViewNotAddSubviewNotification;
 /**
  * 还未播放，在播放列表页面，预加载所有的 prepareUrlList。
  * 在播放列表页面先调了该接口，等几秒后，再跳转到直播页面（直播页面的地址在 prepareUrlList 中），直播页面能快速出图
- * prepareUrlList 传递 4个将要播放的url
+ * prepareUrlList 传递 6个将要播放的url
  */
 - (void)setLivePlayerUrlListOnlyPreload:(NSArray<NSString *> *)prepareUrlList;
 
