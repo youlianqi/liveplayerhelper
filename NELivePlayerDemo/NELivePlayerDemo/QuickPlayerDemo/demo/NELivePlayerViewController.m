@@ -9,7 +9,7 @@
 #import "NELivePlayerViewController.h"
 #import "NELiveVideoManager.h"
 #import <MJRefresh/MJRefresh.h>
-
+#import "NEDataManager.h"
 
 @interface NELivePlayerViewController ()
 
@@ -21,6 +21,7 @@
 
 @property (nonatomic, assign) BOOL isInsertFront;
 @property (nonatomic, assign) NSUInteger currentIndex;
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
 
 @end
 
@@ -33,7 +34,8 @@
 - (instancetype)initWithDataSource:(NSArray *)array {
     if (self = [super init]) {
         _manager = [[NELiveVideoManager alloc] initWithDataSource:array];
-        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
+        UIBarButtonItem *backItem = [[UIBarButtonItem alloc] initWithTitle:@"返回" style:UIBarButtonItemStylePlain target:self action:@selector(onBack:)];
+        backItem.tintColor = [UIColor whiteColor];
         self.navigationItem.leftBarButtonItem = backItem;
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(onNotifyLiveVideoManagerRequestMore:)
@@ -61,6 +63,10 @@
     [self.view addSubview:self.manager.portraitScrollView];
     self.manager.portraitScrollView.frame = self.view.bounds;
     [self.manager reloadData];
+    
+    if ([NEDataManager sharedInstance].rememberProfileType) {
+        [self.view addSubview:self.segmentedControl];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -120,6 +126,31 @@
     self.statusBarStyle = UIStatusBarStyleDefault;
 }
 
+- (UISegmentedControl *)segmentedControl {
+    if (!_segmentedControl) {
+        _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"180", @"360", @"540", @"720"]];
+        _segmentedControl.selectedSegmentIndex = [NEDataManager sharedInstance].profileType;
+        [_segmentedControl setApportionsSegmentWidthsByContent:YES];
+        _segmentedControl.backgroundColor = [UIColor grayColor];
+        [_segmentedControl addTarget:self action:@selector(segmentControlChangeValue:) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    return _segmentedControl;
+}
+
+- (void)segmentControlChangeValue:(UISegmentedControl *)control {
+    [NEDataManager sharedInstance].profileType = control.selectedSegmentIndex;
+    [self.manager reloadDataDidProfileChanged];
+}
+
+- (void)viewWillLayoutSubviews {
+    [super viewWillLayoutSubviews];
+    
+    if (_segmentedControl) {
+        _segmentedControl.frame = CGRectMake(20, self.view.frame.size.height-60, self.view.frame.size.width-40, 33);
+    }
+}
+
 #pragma mark - Navigation
 
 - (void)setupRefresh {
@@ -143,14 +174,14 @@
 
 - (void)reRequestNewData {
     [self.manager.dataSource removeAllObjects];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    [self.manager.dataSource addObject:[NEDataManager data1]];
+    [self.manager.dataSource addObject:[NEDataManager data2]];
+    [self.manager.dataSource addObject:[NEDataManager data3]];
+    [self.manager.dataSource addObject:[NEDataManager data4]];
+    [self.manager.dataSource addObject:[NEDataManager data5]];
+    [self.manager.dataSource addObject:[NEDataManager data6]];
+    [self.manager.dataSource addObject:[NEDataManager data7]];
+    [self.manager.dataSource addObject:[NEDataManager data8]];
     [self.manager.portraitScrollView.mj_header endRefreshing];
     [self.manager.portraitScrollView.mj_footer endRefreshing];
     [self.manager.portraitScrollView reloadData];
@@ -169,29 +200,29 @@
 }
 
 - (NSUInteger)findIndexOfLastDataSource {
-    NSString *lastUrl = self.manager.dataSource.lastObject;
-    if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_1]) {
+    NEPlayerUrlData *lastData = self.manager.dataSource.lastObject;
+    if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_1]) {
         return 1;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_2]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_2]) {
         return 2;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_3]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_3]) {
         return 3;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_4]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_4]) {
         return 4;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_5]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_5]) {
         return 5;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_6]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_6]) {
         return 6;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_7]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_7]) {
         return 7;
     }
-    else  if ([lastUrl isEqualToString:NE_DEMO_PLAYER_URL_8]) {
+    else  if ([lastData.url540 containsString:NE_DEMO_PLAYER_URL_8]) {
         return 8;
     }
     
@@ -200,28 +231,28 @@
 
 - (void)addPlayUrlWithIndex:(NSUInteger)index {
     if (index == 1) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
+        [self.manager.dataSource addObject:[NEDataManager data1]];
     }
     else if (index == 2) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
+        [self.manager.dataSource addObject:[NEDataManager data2]];
     }
     else if (index == 3) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
+        [self.manager.dataSource addObject:[NEDataManager data3]];
     }
     else if (index == 4) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
+        [self.manager.dataSource addObject:[NEDataManager data4]];
     }
     else if (index == 5) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
+        [self.manager.dataSource addObject:[NEDataManager data5]];
     }
     else if (index == 6) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
+        [self.manager.dataSource addObject:[NEDataManager data6]];
     }
     else if (index == 7) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
+        [self.manager.dataSource addObject:[NEDataManager data7]];
     }
     else if (index == 8) {
-        [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+        [self.manager.dataSource addObject:[NEDataManager data8]];
     }
 }
 
@@ -236,14 +267,14 @@
 
 - (void)requestData {
     [self.manager.dataSource removeAllObjects];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-    [self.manager.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    [self.manager.dataSource addObject:[NEDataManager data1]];
+    [self.manager.dataSource addObject:[NEDataManager data2]];
+    [self.manager.dataSource addObject:[NEDataManager data3]];
+    [self.manager.dataSource addObject:[NEDataManager data4]];
+    [self.manager.dataSource addObject:[NEDataManager data5]];
+    [self.manager.dataSource addObject:[NEDataManager data6]];
+    [self.manager.dataSource addObject:[NEDataManager data7]];
+    [self.manager.dataSource addObject:[NEDataManager data8]];
     [self.manager.portraitScrollView reloadData];
 }
 

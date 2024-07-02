@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 #endif
 
+
 @interface NELivePlayerLogManager : NSObject
 
 + (instancetype)shareInstance;

@@ -12,7 +12,7 @@
 #import "NELivePlayerLogManager.h"
 
 #define kKeepPrepareLoadTimerDuration 20
-#define kKeepPlayingTimerDuration 2
+#define kKeepPlayingTimerDuration 3
 #define kPlayingErroRetryLimit 10
 
 NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPlayViewNotAddSubviewNotification";
@@ -312,6 +312,7 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
     self.cacheNextPlayUrl = @"";
     [self stopTimer];
     _hasInited = NO;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
 }
 
 - (instancetype)init
@@ -447,7 +448,7 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
 }
 
 - (BOOL)isUrlInPrepareUrlList:(NSString *)url urlList:(NSArray *)urlList {
-    for (NSString *prepareUrl in self.cachePrepareUrlList) {
+    for (NSString *prepareUrl in urlList) {
         if (prepareUrl.length > 0 &&  [prepareUrl isEqualToString:url]) {
             return YES;
         }
@@ -480,6 +481,25 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
         }
     }
 #endif
+    return YES;
+}
+
+- (BOOL)switchPlayingUrl:(NSString *)playingUrl {
+    LIVE_PLAYER_LOG(@"%s switchPlayingUrl lastPlayingUrl:%@ to:%@", __func__, self.playingUrl, playingUrl);
+
+    if ([self.playingUrl isEqualToString:playingUrl]) {
+        return NO;
+    }
+    
+    NELivePlayer *livePlayer = [self getPlayerWithUrl:self.playingUrl];
+    livePlayer.url = playingUrl;
+    [livePlayer.player switchContentUrl: [NSURL URLWithString:playingUrl]];
+    self.playingUrl = playingUrl;
+    self.cachePlayingUrl = playingUrl;
+    
+    [self stopPlayerTimer];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(startPlayerTimer) withObject:nil afterDelay:8];
     return YES;
 }
 
@@ -560,7 +580,12 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
     if (prepareUrlList.count >= 3) {
         NSString *url = prepareUrlList[2];
         NELivePlayer *playerModel = [self getPlayerWithUrl:url];
-        if (!playerModel) {
+        if (playerModel) {
+            if (playerModel.isPlaying && ![url isEqualToString:self.lastPlayUrl]) {
+                playerModel.isPlaying = NO;
+            }
+        }
+        else {
             if (freeLivePlayer.count > 0) {
                 playerModel = freeLivePlayer[0];
                 [freeLivePlayer removeObjectAtIndex:0];
@@ -579,7 +604,12 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
     if (prepareUrlList.count >= 2) {
         NSString *url = prepareUrlList[1];
         NELivePlayer *playerModel = [self getPlayerWithUrl:url];
-        if (!playerModel) {
+        if (playerModel) {
+            if (playerModel.isPlaying && ![url isEqualToString:self.lastPlayUrl]) {
+                playerModel.isPlaying = NO;
+            }
+        }
+        else {
             if (freeLivePlayer.count > 0) {
                 playerModel = freeLivePlayer[0];
                 [freeLivePlayer removeObjectAtIndex:0];
@@ -598,7 +628,12 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
     if (prepareUrlList.count >= 1) {
         NSString *url = prepareUrlList[0];
         NELivePlayer *playerModel = [self getPlayerWithUrl:url];
-        if (!playerModel) {
+        if (playerModel) {
+            if (playerModel.isPlaying && ![url isEqualToString:self.lastPlayUrl]) {
+                playerModel.isPlaying = NO;
+            }
+        }
+        else {
             if (freeLivePlayer.count > 0) {
                 playerModel = freeLivePlayer[0];
                 [freeLivePlayer removeObjectAtIndex:0];
@@ -709,6 +744,7 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
 
 // 当应用程序返回前台时，会调用此方法
 - (void)appDidBecomeActive:(NSNotification *)notification {
+    LIVE_PLAYER_LOG(@"%s", __FUNCTION__);
     [self performSelector:@selector(resumePlayerIfNeeded) withObject:nil afterDelay:2.0];
     [self performSelector:@selector(startPlayerTimer) withObject:nil afterDelay:2.0];
 }
@@ -718,11 +754,11 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
         NELivePlayer *model = self.playerList[i];
         if (model.url.length > 0 && model.isPlaying && !model.player.isPlaying) {
             if (model.isMarkPlay) {
-                LIVE_PLAYER_LOG(@"appDidBecomeActive  [%@][%@] 恢复播放", @(i), model.url);
+                LIVE_PLAYER_LOG(@"%s  [%@][%@] 恢复播放", __FUNCTION__, @(i), model.url);
                 [model.player play];
             }
             else {
-                LIVE_PLAYER_LOG(@"appDidBecomeActive  [%@][%@] 重启播放", @(i), model.url);
+                LIVE_PLAYER_LOG(@"%s  [%@][%@] 重启播放", __FUNCTION__, @(i), model.url);
                 [model restartPlay];
             }
         }
@@ -731,6 +767,7 @@ NSString *const NELivePlayerPlayViewNotAddSubviewNotification = @"NELivePlayerPl
 
 // 当应用程序进入后台时，会调用此方法
 - (void)appDidEnterBackground:(NSNotification *)notification {
+    LIVE_PLAYER_LOG(@"%s", __FUNCTION__);
     [self stopPlayerTimer];
 }
 

@@ -10,6 +10,7 @@
 #import "GKVideoScrollView.h"
 #import "NELiveVideoCell.h"
 
+
 NS_ASSUME_NONNULL_BEGIN
 
 extern NSString *const NE_DEMO_PLAYER_URL_1;
@@ -57,6 +58,8 @@ extern NSString *const NE_DEMO_PLAYER_URL_8;
 
 - (void)reloadData;
 - (void)reloadDataWithIndex:(NSInteger)index;
+- (void)reloadDataDidProfileChanged;
+
 - (void)clearAllPlayers;
 
 @end

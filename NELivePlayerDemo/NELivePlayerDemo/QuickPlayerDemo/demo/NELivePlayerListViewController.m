@@ -9,6 +9,8 @@
 #import "NELiveVideoManager.h"
 #import "NELivePlayerViewController.h"
 #import "NELivePlayerManager.h"
+#import "NEDataManager.h"
+#import "LabelSwitchView.h"
 
 @interface NELivePlayerCollectionViewCell()
 
@@ -50,7 +52,8 @@
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, assign) NSUInteger preloadIndex;
 @property (nonatomic, strong) NSMutableArray *dataSource;
-
+@property (nonatomic, strong) UISegmentedControl *segmentedControl;
+@property (nonatomic, strong) LabelSwitchView *rememberSwitchView;
 @end
 
 @implementation NELivePlayerListViewController
@@ -71,15 +74,18 @@
 
 - (instancetype)init {
     if (self = [super init]) {
- 
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-        [self.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+        UIBarButtonItem *segmentedBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.segmentedControl];
+        UIBarButtonItem *rememberBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.rememberSwitchView];
+        self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:segmentedBarButtonItem, rememberBarButtonItem, nil];
+        
+        [self.dataSource addObject:[NEDataManager data1]];
+        [self.dataSource addObject:[NEDataManager data2]];
+        [self.dataSource addObject:[NEDataManager data3]];
+        [self.dataSource addObject:[NEDataManager data4]];
+        [self.dataSource addObject:[NEDataManager data5]];
+        [self.dataSource addObject:[NEDataManager data6]];
+        [self.dataSource addObject:[NEDataManager data7]];
+        [self.dataSource addObject:[NEDataManager data8]];
         
         _preloadIndex = 0;
         [self setLivePlayerUrlListInInit];
@@ -97,6 +103,12 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    if (_segmentedControl) {
+        if (_segmentedControl.selectedSegmentIndex != [NEDataManager sharedInstance].profileType) {
+            _segmentedControl.selectedSegmentIndex = [NEDataManager sharedInstance].profileType;
+            [self segmentControlChangeValue:_segmentedControl];
+        }
+    }
     [self resetPreloadPlayerIfNeeded];
 }
 
@@ -105,8 +117,6 @@
     if( !_collectionView ) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
-        //layout.itemSize = CGSizeMake(100, 150);
-        
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         [_collectionView registerClass:[NELivePlayerCollectionViewCell class] forCellWithReuseIdentifier:@"PlayerListCellIdentifier"];
         _collectionView.dataSource = self;
@@ -116,13 +126,49 @@
     return _collectionView;
 }
 
+- (UISegmentedControl *)segmentedControl {
+    if (!_segmentedControl) {
+        _segmentedControl = [[UISegmentedControl alloc] initWithItems:@[@"180", @"360", @"540", @"720"]];
+        _segmentedControl.selectedSegmentIndex = [NEDataManager sharedInstance].profileType;
+        [_segmentedControl addTarget:self action:@selector(segmentControlChangeValue:) forControlEvents:UIControlEventValueChanged];
+    }
+    
+    return _segmentedControl;
+}
+
+- (void)segmentControlChangeValue:(UISegmentedControl *)control {
+    [NEDataManager sharedInstance].profileType = control.selectedSegmentIndex;
+    [self.collectionView reloadData];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf resetPreloadPlayerIfNeeded];
+    });
+}
+
+- (LabelSwitchView *)rememberSwitchView {
+    if (!_rememberSwitchView) {
+        LabelSwitchView *view = [[LabelSwitchView alloc] initWithFrame:CGRectMake(0, 0, 150, 30)];
+        view.textLabel.text = @"记住分辨率";
+        view.textLabel.font = [UIFont systemFontOfSize:14];
+        view.switcher.on = NO;
+        [view.switcher addTarget:self action:@selector(rememberSwitchAction:) forControlEvents:UIControlEventValueChanged];
+        _rememberSwitchView = view;
+    }
+    return _rememberSwitchView;
+}
+
+- (void)rememberSwitchAction:(UISwitch *)switcher {
+    [NEDataManager sharedInstance].rememberProfileType = switcher.isOn;
+}
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString * CellIdentifier = @"PlayerListCellIdentifier";
     NELivePlayerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:CellIdentifier forIndexPath:indexPath];
     if (indexPath.row < self.dataSource.count) {
-        cell.url = self.dataSource[indexPath.row];
+        NEPlayerUrlData *data = self.dataSource[indexPath.row];
+        cell.url = data.url;
         cell.titleLabel.text = cell.url;
     }
     
@@ -191,16 +237,20 @@
 }
 
 - (void)requestMoreData {
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_1];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_2];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_3];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_4];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_5];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_6];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_7];
-    [self.dataSource addObject:NE_DEMO_PLAYER_URL_8];
+    [self.dataSource addObject:[NEDataManager data1]];
+    [self.dataSource addObject:[NEDataManager data2]];
+    [self.dataSource addObject:[NEDataManager data3]];
+    [self.dataSource addObject:[NEDataManager data4]];
+    [self.dataSource addObject:[NEDataManager data5]];
+    [self.dataSource addObject:[NEDataManager data6]];
+    [self.dataSource addObject:[NEDataManager data7]];
+    [self.dataSource addObject:[NEDataManager data8]];
     [self.collectionView reloadData];
-    [self resetPreloadPlayerIfNeeded];
+    __weak __typeof(self) weakSelf = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        __strong __typeof(weakSelf) strongSelf = weakSelf;
+        [strongSelf resetPreloadPlayerIfNeeded];
+    });
 }
 
 - (void)resetPreloadPlayerIfNeeded {
@@ -241,7 +291,8 @@
     NSMutableArray *preloadList = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < 6; ++i) {
         if (i < self.dataSource.count) {
-            [preloadList addObject:self.dataSource[i]];
+            NEPlayerUrlData *data = self.dataSource[i];
+            [preloadList addObject:data.url];
         }
     }
     

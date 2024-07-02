@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @class NELiveVideoCell;
 @class NELivePlayer;
 @class NELivePlayerModel;
+@class NEPlayerUrlData;
 
 @protocol NELivePlayerVideoCellDelegate <NSObject>
 
@@ -30,6 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, readonly) NELivePlayer *player;
 
 @property (nonatomic, strong) NSString *playerModel;
+@property (nonatomic, strong) NEPlayerUrlData *playerData;
 
 - (void)initUI;
 
@@ -39,6 +41,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)scrollViewDidEndDragging;
 
+- (void)resetSegmentControl;
+
+- (void)videoProfileDidChanged;
 
 @end
 

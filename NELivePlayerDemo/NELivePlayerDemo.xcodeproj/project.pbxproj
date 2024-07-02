@@ -22,6 +22,8 @@
 		471D91552C10119900FE7494 /* NELiveVideoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 471D914D2C10119900FE7494 /* NELiveVideoManager.m */; };
 		4721C33F2C1BE9F9008BF743 /* NELivePlayerLogManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4721C33E2C1BE9F9008BF743 /* NELivePlayerLogManager.m */; };
 		47597A282C19AEA0003177B0 /* NTESDemoLogFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 47597A252C19AEA0003177B0 /* NTESDemoLogFileManager.m */; };
+		4769CF242C2D44E600546C59 /* NEDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4769CF232C2D44E600546C59 /* NEDataManager.m */; };
+		4769CF2E2C2D861600546C59 /* LabelSwitchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4769CF2C2C2D861600546C59 /* LabelSwitchView.m */; };
 		477DDCAE2C119EA200175AF9 /* NELivePlayerListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 477DDCAD2C119EA200175AF9 /* NELivePlayerListViewController.m */; };
 		47D49D9E2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */; };
 		47D49D9F2C19FC0E0057648D /* Pods_NELivePlayerDemo.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E4726EE4606F0FAC3C4F536A /* Pods_NELivePlayerDemo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -101,6 +103,10 @@
 		4721C33E2C1BE9F9008BF743 /* NELivePlayerLogManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerLogManager.m; sourceTree = "<group>"; };
 		47597A242C19AEA0003177B0 /* NTESDemoLogFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDemoLogFileManager.h; sourceTree = "<group>"; };
 		47597A252C19AEA0003177B0 /* NTESDemoLogFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDemoLogFileManager.m; sourceTree = "<group>"; };
+		4769CF222C2D44E600546C59 /* NEDataManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NEDataManager.h; sourceTree = "<group>"; };
+		4769CF232C2D44E600546C59 /* NEDataManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NEDataManager.m; sourceTree = "<group>"; };
+		4769CF2C2C2D861600546C59 /* LabelSwitchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelSwitchView.m; sourceTree = "<group>"; };
+		4769CF2D2C2D861600546C59 /* LabelSwitchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelSwitchView.h; sourceTree = "<group>"; };
 		477DDCAC2C119EA200175AF9 /* NELivePlayerListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NELivePlayerListViewController.h; sourceTree = "<group>"; };
 		477DDCAD2C119EA200175AF9 /* NELivePlayerListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NELivePlayerListViewController.m; sourceTree = "<group>"; };
 		47D49DA02C19FC670057648D /* NELPGslb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NELPGslb.framework; path = ../../../LivePlayer_iOS_Demo_v3.2.7/NELivePlayer/NELPGslb.framework; sourceTree = "<group>"; };
@@ -261,6 +267,8 @@
 				471D914B2C10119900FE7494 /* NELiveVideoCell.m */,
 				471D914C2C10119900FE7494 /* NELiveVideoManager.h */,
 				471D914D2C10119900FE7494 /* NELiveVideoManager.m */,
+				4769CF222C2D44E600546C59 /* NEDataManager.h */,
+				4769CF232C2D44E600546C59 /* NEDataManager.m */,
 			);
 			path = demo;
 			sourceTree = "<group>";
@@ -287,6 +295,8 @@
 				47F606B02C114FB100C1B83D /* NELivePlayerVC.m */,
 				47F606B72C11501400C1B83D /* UIView+NEPlayer.h */,
 				47F606B62C11501400C1B83D /* UIView+NEPlayer.m */,
+				4769CF2D2C2D861600546C59 /* LabelSwitchView.h */,
+				4769CF2C2C2D861600546C59 /* LabelSwitchView.m */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -570,12 +580,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4769CF242C2D44E600546C59 /* NEDataManager.m in Sources */,
 				477DDCAE2C119EA200175AF9 /* NELivePlayerListViewController.m in Sources */,
 				47F606B82C11501400C1B83D /* UIView+NEPlayer.m in Sources */,
 				471D91522C10119900FE7494 /* GKVideoViewCell.m in Sources */,
 				47F606C52C11527700C1B83D /* NELPDisplayView.m in Sources */,
 				4721C33F2C1BE9F9008BF743 /* NELivePlayerLogManager.m in Sources */,
 				471D91502C10119900FE7494 /* NELivePlayerManager.m in Sources */,
+				4769CF2E2C2D861600546C59 /* LabelSwitchView.m in Sources */,
 				47F606C42C11527700C1B83D /* NELPDisplayScrollView.m in Sources */,
 				47F606B32C114FB100C1B83D /* NELivePlayerLoginViewController.m in Sources */,
 				47F606B22C114FB100C1B83D /* NELivePlayerControlView.m in Sources */,
@@ -760,7 +772,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = GJ8NYK9W5X;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_PREFIX_HEADER = ./NELivePlayerDemo/NELivePlayerDemo.pch;
@@ -795,7 +807,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 17;
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = 569GNZ5392;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
