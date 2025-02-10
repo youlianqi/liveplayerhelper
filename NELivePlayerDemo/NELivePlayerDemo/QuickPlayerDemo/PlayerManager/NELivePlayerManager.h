@@ -68,6 +68,7 @@ extern NSString *const NELivePlayerPlayViewNotAddSubviewNotification;
  * 切换当前页面播放器的url
  */
 - (BOOL)switchPlayingUrl:(NSString *)playingUrl;
+
 /**
  * 根据播放器地址获取 NELivePlayer
  */
